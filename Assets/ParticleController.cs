@@ -10,7 +10,6 @@ public class ParticleController : MonoBehaviour
     public float emitInterval = 8.0f; // 粒子发射间隔（秒）
 
     private ParticleSystem myParticleSystem; // 重命名以避免冲突
-    private ParticleSystemRenderer particleRenderer;
     private List<float> yPositions = new List<float>();
     private float timeSinceLastEmit = 8.0f;
 
@@ -18,7 +17,6 @@ public class ParticleController : MonoBehaviour
     private void Start()
     {
         myParticleSystem = GetComponent<ParticleSystem>(); // 重命名以避免冲突
-        particleRenderer = GetComponent<ParticleSystemRenderer>();
         LoadYPositionsFromCSV();
         StartCoroutine(UpdateParticlePositions());
     }
@@ -30,9 +28,6 @@ public class ParticleController : MonoBehaviour
 
         if (timeSinceLastEmit >= emitInterval)
         {
-            Color invisible = new Color(0, 0, 0, 0);
-            particleRenderer.material.color = invisible;
-            particleRenderer.trailMaterial.color = invisible;
             EmitParticle();
             timeSinceLastEmit = 0;
         }
