@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class ParticleController : MonoBehaviour
+public class PlethWave : MonoBehaviour
 {
     public TextAsset csvFile; // CSV文件作为TextAsset
     public float xSpeed; // 粒子在X轴上的速度
@@ -46,7 +46,7 @@ public class ParticleController : MonoBehaviour
 
     private void EmitParticle()
     {
-        
+
         ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
         emitParams.velocity = new Vector3(xSpeed, 0, 0);
         myParticleSystem.Emit(emitParams, 1); // 重命名以避免冲突
@@ -63,7 +63,7 @@ public class ParticleController : MonoBehaviour
             for (int i = 0; i < particleCount; i++)
             {
                 float age = particles[i].startLifetime - particles[i].remainingLifetime;
-                int index = Mathf.FloorToInt(age * 300);
+                int index = Mathf.FloorToInt(age * 100);
 
                 if (index < yPositions.Count)
                 {
@@ -75,7 +75,7 @@ public class ParticleController : MonoBehaviour
 
             myParticleSystem.SetParticles(particles, particleCount); // 重命名以避免冲突
 
-            yield return new WaitForSeconds(1 / 300.0f);
+            yield return new WaitForSeconds(1 / 100.0f);
         }
     }
 }
