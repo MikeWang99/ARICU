@@ -11,7 +11,7 @@ public class ParticleController : MonoBehaviour
 
     private ParticleSystem myParticleSystem; // ÖØÃüÃûÒÔ±ÜÃâ³åÍ»
     private List<float> yPositions = new List<float>();
-    private float timeSinceLastEmit = 0;
+    private float timeSinceLastEmit = 8.0f;
 
     // Start is called before the first frame update
     private void Start()
