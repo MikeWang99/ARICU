@@ -46,6 +46,7 @@ public class ParticleController : MonoBehaviour
 
     private void EmitParticle()
     {
+        
         ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
         emitParams.velocity = new Vector3(xSpeed, 0, 0);
         myParticleSystem.Emit(emitParams, 1); // ÖØÃüÃûÒÔ±ÜÃâ³åÍ»
