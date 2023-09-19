@@ -1,13 +1,17 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class HeartRate : MonoBehaviour
 {
-    // Reference to TextMeshPro component
     public TextMeshPro textMesh;
-
-    // Heart Rate value
-    public float heartRate = 60.0f;
+    public TextAsset DataFile;
+    private int HR;
+    private int Count = 0;
+    private List<int> HRData = new List<int>();
+    private float nextUpdate = 0.0f;
+    private float updateInterval = 5.0f;  // Update every 5 seconds
 
     private void Start()
     {
@@ -15,7 +19,17 @@ public class HeartRate : MonoBehaviour
         {
             Debug.LogError("textMesh is not set!");
         }
+
+        if (DataFile == null)
+        {
+            Debug.LogError("DataFile is not set!");
+        }
+        else
+        {
+            LoadDataFromCSV();
+        }
     }
+
     private void Awake()
     {
         if (textMesh == null)
@@ -24,18 +38,39 @@ public class HeartRate : MonoBehaviour
         }
     }
 
+    private void LoadDataFromCSV()
+    {
+        string[] lines = DataFile.text.Split(new[] { "\r\n", "\r", "\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string[] entries = lines[i].Split(',');
+            if (int.TryParse(entries[0], out int parsedHR))
+            {
+                HRData.Add(parsedHR);
+            }
+            else
+            {
+                Debug.LogWarning("Could not parse HR value: " + entries[0]);
+            }
+        }
+    }
 
     private void Update()
     {
-        // For demo purposes, this randomly changes the heart rate value between 1 and 100 every 0.5 seconds.
-        if (Time.time % 0.5f < 0.1f) // This is a simple way to do something every 0.5 seconds
+        if (Time.time >= nextUpdate)
         {
-            heartRate = Random.Range(1.0f, 100.0f);
+            nextUpdate += updateInterval;
+            if (Count < HRData.Count)
+            {
+                HR = HRData[Count];
+                Count++;
+            }
+            else
+            {
+                Debug.LogWarning("Reached end of HRData list.");
+            }
         }
 
-        // Here, you should update heartRate value according to your heart rate sensor data instead of random value
-
-        // Set the text of the Text Mesh Pro object to display the current heart rate
-        textMesh.text = heartRate.ToString("F1");
+        textMesh.text = HR.ToString();
     }
 }
