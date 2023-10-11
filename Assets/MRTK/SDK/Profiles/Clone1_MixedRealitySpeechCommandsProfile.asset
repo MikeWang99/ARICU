@@ -59,28 +59,28 @@ MonoBehaviour:
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: Hunderd vierzig
+    keyword: hunderd zwanzig
     keyCode: 0
     action:
       id: 0
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: 140
+    keyword: one hunderd ten
     keyCode: 0
     action:
       id: 0
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: one hunderd fifty
+    keyword: one hunderd
     keyCode: 0
     action:
       id: 0
       description: None
       axisConstraint: 0
   - localizationKey: 
-    keyword: 150
+    keyword: 120
     keyCode: 0
     action:
       id: 0
