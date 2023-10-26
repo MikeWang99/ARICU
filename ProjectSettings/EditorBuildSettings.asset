@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Nurse.unity
+    guid: 02eb68056de32694db40f4df888daef9
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dedbf2e64e2c19c43b18edf73b515d7a, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 92745e74a12dfdf43a585b548979fc33, type: 2}

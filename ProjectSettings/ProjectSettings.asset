@@ -624,11 +624,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template3D
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: "C:\\Users\\\u738B\u54C8\u54C8\u54E6\u54E6\\Desktop\\ARICU\\Assets\\WSATestCertificate.pfx"
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 8094cb99f625db01
   metroApplicationDescription: Template_3D
   wsaImages: {}
   metroTileShortName: ARICU
