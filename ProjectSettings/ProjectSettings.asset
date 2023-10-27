@@ -624,7 +624,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template3D
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: "C:\\Users\\\u738B\u54C8\u54C8\u54E6\u54E6\\Desktop\\ARICU\\Assets\\WSATestCertificate.pfx"
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
@@ -647,6 +647,7 @@ PlayerSettings:
     WindowsStoreApps:
       VideosLibrary: True
       GazeInput: True
+      PrivateNetworkClientServer: True
       InternetClientServer: True
       SpatialPerception: True
       InternetClient: True
